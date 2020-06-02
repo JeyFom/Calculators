@@ -38,9 +38,9 @@ class Triangle extends Component {
         <fieldset className='field'>
           <legend>Вычислить площадь треугольника по его сторонам</legend>
 
-          <TextField type='number' size='small' label='a =' variant="outlined" onChange={this.aHandler} value={this.state.a} />
-          <TextField type='number' size='small' label='b =' variant="outlined" onChange={this.bHandler} value={this.state.b} />
-          <TextField type='number' size='small' label='c =' variant="outlined" onChange={this.cHandler} value={this.state.c} />
+          <TextField type='number' size='small' label='a =' variant="outlined" onChange={this.aHandler} defaultValue={this.state.a} />
+          <TextField type='number' size='small' label='b =' variant="outlined" onChange={this.bHandler} defaultValue={this.state.b} />
+          <TextField type='number' size='small' label='c =' variant="outlined" onChange={this.cHandler} defaultValue={this.state.c} />
           <Button variant="contained" color="primary" onClick={this.halfPerimeterCalculate}>Рассчитать</Button>
         </fieldset>
         <TextField disabled size='small' value={`Площадь треугольника: ${this.state.s >= 0 ? this.state.s : 'Некорректное значение'}`} />
