@@ -43,7 +43,7 @@ class Triangle extends Component {
           <TextField type='number' size='small' label='c =' variant="outlined" onChange={this.cHandler} value={this.state.c} />
           <Button variant="contained" color="primary" onClick={this.halfPerimeterCalculate}>Рассчитать</Button>
         </fieldset>
-        <TextField disabled size='small' value={`Площадь треугольника S= ${this.state.s > 0 ? this.state.s : 'ошибка'}`} />
+        <TextField disabled size='small' value={`Площадь треугольника S= ${this.state.s > 0 ? this.state.s : 'Введите значения'}`} />
       </form>
     );
   }

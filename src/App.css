@@ -40,7 +40,6 @@
 .field {
   display: flex;
   flex-direction: column;
-  height: 230px;
 }
 
 .MuiInputBase-root {
