@@ -19,9 +19,9 @@ class App extends React.PureComponent {
     window['registerModule'] = this.addModule.bind(this);
   }
 
-  addModule(module) {
+  addModule(module, title) {
     const modules = [...this.state.modules];
-    modules.push(module);
+    modules.push({module, title});
 
     this.setState({modules});
   }
@@ -36,10 +36,10 @@ class App extends React.PureComponent {
 
     return (
       <div className='container'>
-        <Button variant="contained" onClick={() => this.changeModuleIndex(0)}>Калькулятор для вычисления площади треугольника</Button>
-
-        <Button variant="contained" onClick={() => this.changeModuleIndex(1)}>Калькулятор для вычисления НОД</Button>
-        {Module && React.createElement(Module)}
+        {this.state.modules.map((m,i) => 
+          <Button key={'b'+i} variant="contained" onClick={() => this.changeModuleIndex(i)}>{m.title}</Button>
+        )}
+        {Module && React.createElement(Module.module)}
       </div>
     );
   }

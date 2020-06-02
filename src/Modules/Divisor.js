@@ -40,6 +40,6 @@ class Divisor extends Component {
 
 }
 
-window['registerModule'](Divisor);
+window['registerModule'](Divisor, 'Калькулятор для вычисления НОД');
 
 export default Divisor

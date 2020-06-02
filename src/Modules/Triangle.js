@@ -50,6 +50,6 @@ class Triangle extends Component {
 
 }
 
-window['registerModule'](Triangle);
+window['registerModule'](Triangle, 'Калькулятор для вычисления площади треугольника');
 
 export default Triangle
