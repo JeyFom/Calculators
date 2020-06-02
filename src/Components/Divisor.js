@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {TextField, Button} from '@material-ui/core';
+import NOD from '../utils/NOD';
 
 class Divisor extends Component {
   constructor() {
@@ -12,25 +13,14 @@ class Divisor extends Component {
     }
   }
 
-  aHandler = e => this.setState({a: e.target.value.replace(/[^\d.]/, '')});
+  aHandler = e => this.setState({a: +e.target.value});
 
-  bHandler = e => this.setState({b: e.target.value.replace(/[^\d.]/, '')});
+  bHandler = e => this.setState({b: +e.target.value});
 
   getDivisor = () => {
-    console.log('first')
     const {a, b} = this.state;
-    let first = a;
-    let second = b;
-    while(first !== second) {
-      if(first > second) {
-        first = first-second;
-      } else {
-        second = second-first;
-      }
-      console.log('kek')
-    }
-    
-    //this.setState({divisor: first})
+    const divisor = NOD(a, b)
+    this.setState({divisor})
   };
 
   render() {
