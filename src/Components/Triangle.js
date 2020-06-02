@@ -14,11 +14,11 @@ class Triangle extends Component {
     }
   }
 
-  aHandler = e => this.setState({a: +e.target.value});
+  aHandler = e => this.setState({a: e.target.value});
 
-  bHandler = e => this.setState({b: +e.target.value});
+  bHandler = e => this.setState({b: e.target.value});
 
-  cHandler = e => this.setState({c: +e.target.value});
+  cHandler = e => this.setState({c: e.target.value});
 
   squareCalculate = () => {
     const {a, b, c, p} = this.state;
@@ -28,7 +28,7 @@ class Triangle extends Component {
 
   halfPerimeterCalculate = () => {
     const {a, b, c} = this.state;
-    const halfPerimeter = (a + b + c)/2;
+    const halfPerimeter = ((+a) + (+b) + (+c))/2;
     this.setState({p: halfPerimeter}, () => this.squareCalculate())
   };
 
@@ -43,7 +43,7 @@ class Triangle extends Component {
           <TextField type='number' size='small' label='c =' variant="outlined" onChange={this.cHandler} value={this.state.c} />
           <Button variant="contained" color="primary" onClick={this.halfPerimeterCalculate}>Рассчитать</Button>
         </fieldset>
-        <p>Площадь треугольника S= <TextField disabled size='small' value={this.state.s > 0 ? this.state.s : 'ошибка'} /></p>
+        <TextField disabled size='small' value={`Площадь треугольника S= ${this.state.s > 0 ? this.state.s : 'ошибка'}`} />
       </form>
     );
   }

@@ -13,13 +13,13 @@ class Divisor extends Component {
     }
   }
 
-  aHandler = e => this.setState({a: +e.target.value});
+  aHandler = e => this.setState({a: e.target.value});
 
-  bHandler = e => this.setState({b: +e.target.value});
+  bHandler = e => this.setState({b: e.target.value});
 
   getDivisor = () => {
     const {a, b} = this.state;
-    const divisor = NOD(a, b)
+    const divisor = NOD(+a, +b)
     this.setState({divisor})
   };
 
@@ -33,7 +33,7 @@ class Divisor extends Component {
           <TextField type='number' size='small' label='b =' variant="outlined" onChange={this.bHandler} value={this.state.b} />
           <Button variant="contained" color="primary" onClick={this.getDivisor}>Рассчитать</Button>
         </fieldset>
-        <p>Наибольший общий делитель: <TextField disabled size='small' value={this.state.divisor} /></p>
+         <TextField disabled size='small' value={`Наибольший общий делитель: ${this.state.divisor}`}/>
       </form>
     );
   }
