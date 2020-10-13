@@ -45,3 +45,13 @@
 .MuiInputBase-root {
   margin-bottom: 10px;
 }
+
+.container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.MuiButton-root {
+  height: 40px;
+}
