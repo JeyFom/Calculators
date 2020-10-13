@@ -28,11 +28,30 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.calc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 400px;
+  height: 350px;
+  margin: 0 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.MuiInputBase-root {
+  margin-bottom: 10px;
+}
+
+.container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.MuiButton-root {
+  height: 40px;
 }
